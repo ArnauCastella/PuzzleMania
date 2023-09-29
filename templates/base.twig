@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+      {% block styles %}
+      {% endblock %}
+      {% block javaScript %}
+      {% endblock %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            {% if signed_in %}
+            <a href="/teams">Teams</a>
+            <a href="/profile">Profile</a>
+            <a href="/game">Game</a>
+            <a href="/riddles">Riddles API</a>
+            {% endif %}
+            <a href="/sign-in" class="linkButtonSignIn">Sign-In</a>
+            <a href="/sign-up" class="linkButtonSignUp">Sign-Up</a>
+            <p class="puzzleManiaLogo">PuzzleMania</p>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+  </body>
+</html>

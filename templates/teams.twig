@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Teams</title>
+        <meta name="description" content="This is the teams page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/team.css"/>
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Teams | PuzzleMania{% endblock %}
+
+{% block header %}
+    <header>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="descriptionMessage"> 
+    <h2>Welcome to Teams!</h1>
+    <a href="/joinTeam" class="joinCreateTeamButton" name="joinCreateTeamButton">Join Team</a>
+    <a href="/show-create-team" class="joinCreateTeamButton" name="joinCreateTeamButton">Create Team</a>
+</div>
+
+{% block createTeam %}
+{% endblock %}
+
+{% block showEmptyTeams %}
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "riddles.twig" %}
+
+
+{% block listRiddle %}
+{% if riddles is empty %}
+    <div id="riddles-empty">
+        <p style="margin-left:15px">There are no riddles.</p>
+    </div>
+{% else %}
+    <h3>List of Riddles created by our Users:</h2>
+    <div id="riddles-list">
+        {% for riddle in riddles %}
+            <div class="riddle-container">
+                <h3 style="margin-left:15px">Riddle:</h3>
+                <p>{{ riddle.getRiddle() }}</p>
+                {% block riddleAnswer %}
+                {% endblock %}
+                <a href="riddles/{{ riddle.getRiddleId() }}" 
+                style=  "padding: 10px 20px;
+                        background-color: #4CAF50;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        margin-left: 25px;"
+                        >See Answer</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

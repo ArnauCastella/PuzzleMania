@@ -1,0 +1,16 @@
+{% extends "riddles.twig" %}
+
+{% block seeRiddle %}
+
+{% if notifications is not empty %}
+    {% for notification in notifications %}
+        <p style="margin-left:15px; color=#FF0000;" data-cy="sign-in__message">{{ notification }}</p>
+    {% endfor %}
+{% endif %}
+
+<div class="riddle-container" style="margin-top: 15px; margin-left: 15px;">
+    <p>Riddle: {{riddle.getRiddle()}}</p>
+    <p>Answer: {{riddle.getAnswer()}}</p>
+</div>
+
+{% endblock %}

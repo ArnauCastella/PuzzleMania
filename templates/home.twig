@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Home</title>
+        <meta name="description" content="This is the home page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/home.css"/>
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Home | PuzzleMania{% endblock %}
+
+{% block header %}
+    <header>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="descriptionMessage"> 
+    <h2>Welcome to PuzzleMania!</h1>
+    <p>PuzzleMania is a new platform where students can create puzzles — riddles, to be exact —, join a team and start guessing riddles together with other students. To spice up the game, there will be a mystery puzzle to be solved! It's better to work together with you teammates to find out.</p>
+</div>
+{% endblock %}

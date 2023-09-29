@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Riddle API</title>
+        <meta name="description" content="This is the riddles API page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/riddles.css"/>
+        {% endblock %}
+
+        {% block javaScript %}
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Riddle API | PuzzleMania{% endblock %}
+
+{% block content %}
+<h1 data-cy="profile">Riddles API</h1>
+
+{% block listRiddle %}
+{% endblock %}
+
+{% block createRiddle %}
+{% endblock %}
+
+{% block seeRiddle %}
+{% endblock %}
+
+{% endblock %}

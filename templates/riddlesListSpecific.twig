@@ -1,0 +1,13 @@
+{% extends "riddles.twig" %}
+
+{% block listRiddle %}
+<div class="riddle-container">
+    <h3 style="margin-left:15px">Riddle:</h3>
+    <p>{{ riddle.getRiddle() }}</p>
+    <h3 style="margin-left:15px">Answer:</h3>
+    <p>{{ riddle.getAnswer() }}</p>
+</div>
+{% endblock %}
+
+
+

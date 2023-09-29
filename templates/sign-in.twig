@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Sign In</title>
+        <meta name="description" content="This is the sign in page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/signin.css"/>
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Sign-in | PuzzleMania{% endblock %}
+
+{% block content %}
+    {% if notifs is not empty %}
+        {% for notif in notifs %}
+            <p style="margin-left:15px; color:red;" data-cy="sign-in__message">{{ notif }}</p>
+        {% endfor %}
+    {% endif %}
+    <h1 style="margin-left:15px" >Welcome to PuzzleMania - Log In</h1>
+    <form style="margin-left:15px" data-cy="sign-in" action="{{ formAction }}" method="POST">
+        <input data-cy="sign-in__email" type="text" name="email" placeholder="Enter your email"
+               value="{{ formData.email }}">
+        <input data-cy="sign-in__password" type="password" name="password" placeholder="Enter your password">
+        <input data-cy="sign-in__btn" type="submit" value="Sign-in">
+    </form>
+    {% if formErrors['email'] %}
+        <p data-cy="sign-in__wrongEmail">{{ formErrors['email'] }}</p>
+    {% endif %}
+    {% if formErrors['password'] %}
+        <p data-cy="sign-in__wrongPassword">{{ formErrors['password'] }}</p>
+    {% endif %}
+{% endblock %}

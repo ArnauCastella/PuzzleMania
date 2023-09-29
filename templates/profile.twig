@@ -1,0 +1,46 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Profile</title>
+        <meta name="description" content="This is the profile page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/profile.css"/>
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Home | PuzzleMania{% endblock %}
+
+{% block content %}
+<div class="profileDiv">
+    <h1 data-cy="profile">Profile of {{email}}</h1>
+</div>
+
+<div class="profileForm">
+    <h3>Update your Personal Information</h2>
+    <form action="/update-profile-submit" method="post" enctype="multipart/form-data">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{email}}" disabled><br><br>
+        <label for="image">Image:</label>
+        <input type="file" id="fileToUpload" name="fileToUpload"> <br><br>
+            
+        <input style=   "padding: 10px;
+                        background-color: #4CAF50;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        font-size: 12px;
+                        cursor: pointer;
+                        hover: background-color: #45a049;"
+        type="submit" value="Update">
+    </form>
+</div>
+
+<div class="imageUploadFeedbackContainer" style="margin-top: 20px">
+    <span class="spanError">{{formErrors['image']}}</span><br>
+    <span class="spanOk">{{formErrors['ok']}}</span>  
+</div>
+
+{% endblock %}

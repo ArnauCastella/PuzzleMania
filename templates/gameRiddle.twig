@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <head>
+        <title>Puzzlemania - Teams</title>
+        <meta name="description" content="This is the game page of Puzzlemania.">
+        <meta name="author" content="Iván Martínez & Arnau Castellà">
+
+        {% block styles %}
+            <link rel="stylesheet" href="/assets/styles/game.css"/>
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block title %}Teams | PuzzleMania{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="descriptionMessage"> 
+    <h2>Riddle {{riddleNum}}</h1>
+    <p>{{riddleText}}<p>
+    <form method="POST">
+        <input type="text" name="answer" class="input" placeholder="Enter your answer">
+        <input type="submit" class="button" value="Submit">
+    </form>
+    <p>{{control['correctAnswer']}}<p>
+</div>
+
+{% if control['next'] %}
+    <a href="{{control['newUrl']}}" class="button" name="nextButton">Next</a>
+{% endif %}
+
+{% if control['finish'] %}
+    <p>End of the game!<p>
+    <p>Total score: {{control['score']}}<p>
+    <a href="/team-stats" class="button" name="finishButton">Finish</a>
+{% endif %}
+
+{% endblock %}
